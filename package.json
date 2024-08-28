@@ -1,0 +1,21 @@
+{
+  "name": "puhelinluettelo-backend",
+  "version": "0.0.1",
+  "description": "Osan 3 oma repositorio",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf puhelinluettelo-backend/dist && cd puhelinluettelo-frontend && npm run build && cp -r dist ../puhelinluettelo-backend",
+    "deploy:full": "npm run build:ui && cd puhelinluettelo-backend && git add . && git commit -m 'uibuild' && git push"
+  },
+  "author": "Markus Lemiläinen",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}
